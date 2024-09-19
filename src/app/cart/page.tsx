@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Modal from '@/components/Modal';
 import { useRouter } from 'next/navigation';
 import SuccessModal from '@/components/SuccessModal';
+import Image from 'next/image';
 
 interface Product {
     id: number;
@@ -73,9 +74,11 @@ const Cart = () => {
                     <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
                         {cart.map((product) => (
                             <div key={product.id} className="flex flex-col md:flex-row items-center mb-6 border-b pb-6">
-                                <img
+                                <Image
                                     src={product.image}
                                     alt={product.title}
+                                    width={1000}
+                                    height={1000}
                                     className="h-24 w-24 object-cover rounded-lg border mb-4 md:mb-0 md:mr-4"
                                 />
                                 <div className="flex-grow flex flex-col justify-center items-center gap-2">

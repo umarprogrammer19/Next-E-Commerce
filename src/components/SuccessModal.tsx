@@ -9,7 +9,7 @@ interface SuccessModalProps {
 }
 
 const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, message, vCart }) => {
-     const router = useRouter();
+    const router = useRouter();
 
     if (!isOpen) return null;
 

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface Product {
@@ -46,9 +47,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, cart, form, ha
             <div>
               {cart.map((product) => (
                 <div key={product.id} className="flex items-center mb-4 border-b pb-4">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.title}
+                    width={1000}
+                    height={1000}
                     className="h-20 w-20 object-cover rounded-lg border mr-4"
                   />
                   <div className="flex-grow">
@@ -100,7 +103,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, cart, form, ha
             Place Order
           </button>
         </form>
-        
+
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import SuccessModal from '@/components/SuccessModal';
+import Image from 'next/image';
 
 interface Product {
     id: number;
@@ -66,9 +67,11 @@ const SingleProduct = () => {
                     <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row">
                         {/* Product Image */}
                         <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
-                            <img
+                            <Image
                                 src={data.image}
                                 alt={data.title}
+                                width={1000}
+                                height={1000}
                                 className="w-full h-auto max-w-md rounded-lg"
                             />
                         </div>

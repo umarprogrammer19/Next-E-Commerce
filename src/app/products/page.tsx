@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 interface Product {
     id: number;
@@ -32,7 +33,7 @@ const ProductsPage = () => {
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen py-12">
+        <div className="bg-gray-300 min-h-screen py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h1 className="text-4xl font-bold text-center mb-8">Our Products</h1>
                 {!data ? (
@@ -43,9 +44,11 @@ const ProductsPage = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {data.map((product) => (
                             <div key={product.id} className="bg-white p-6 rounded-lg shadow-md">
-                                <img
+                                <Image
                                     src={product.image}
                                     alt={product.title}
+                                    width={1000}
+                                    height={1000}
                                     className="h-48 w-full object-cover mb-4"
                                 />
                                 <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
