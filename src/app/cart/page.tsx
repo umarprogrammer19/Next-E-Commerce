@@ -4,6 +4,7 @@ import Modal from '@/components/Modal';
 import { useRouter } from 'next/navigation';
 import SuccessModal from '@/components/SuccessModal';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Product {
     id: number;
@@ -68,8 +69,17 @@ const Cart = () => {
         <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center md:text-left">Your Shopping Cart</h1>
-                {cart.length === 0 ? (
-                    <div className="text-center text-gray-600">Your cart is empty</div>
+                {cart.length === 0 ? (<>
+                    <div className="text-center text-xl text-gray-600">Your cart is empty add something.</div>
+                    <div className='flex justify-center w-100 mt-8'>
+                        <Link
+                            href="/products"
+                            className="inline-block bg-yellow-500  text-gray-900 py-2 px-6 rounded-md font-medium hover:bg-yellow-600"
+                        >
+                            View Products
+                        </Link>
+                    </div>
+                </>
                 ) : (
                     <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
                         {cart.map((product) => (
