@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Hero = () => {
     return (
         <section className="relative bg-blue-600 text-white p-2">
@@ -25,12 +27,12 @@ const Hero = () => {
                             Discover our range of products and enjoy a seamless shopping experience. Explore now!
                         </p>
                         <div className="mt-8">
-                            <a
-                                href="#shop"
+                            <Link
+                                href="/products"
                                 className="inline-block bg-yellow-500 text-gray-900 py-2 px-6 rounded-md font-medium hover:bg-yellow-600"
                             >
                                 Shop Now
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
